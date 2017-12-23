@@ -1,0 +1,21 @@
+#head {
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding: 5px;
+}
+
+#section {
+	text-align: center;
+	width: 350px;
+	float: center;
+	padding: 10px;
+}
+
+#footer {
+	background-color: gray;
+	color: white;
+	clear: both;
+	text-align: center;
+	padding: 5px;
+}

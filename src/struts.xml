@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="UserCheck" class="stu.libraryManagementSystem.action.UserAction" method="UserCheck">
+			<result name="NoUserError">/error/NoUserError.jsp</result>
+			<result name="PasswordError">/error/PasswordError.jsp</result>
+			<result name="error">/error/error.jsp</result>
+			<result name="success">/MainPage.jsp</result>
+		</action>
+		
+		<action name="SearchBook" class="stu.libraryManagementSystem.action.BookAction" method="SearchBook">
+			<result name="NoBookError">/error/NoBookError.jsp</result>
+			<result name="success">/success/SearchBookSuccess.jsp</result>
+		</action>
+		
+		<action name="BorrowBook" class="stu.libraryManagementSystem.action.BookAction" method="BorrowBook">
+			<result name="success">/success/BorrowBookSuccess.jsp</result>
+		</action>
+		
+		<action name="ReturnBook" class="stu.libraryManagementSystem.action.BookAction" method="ReturnBook">
+			<result name="NoBookError">/error/NoBookError.jsp</result>
+			<result name="success">/success/ReturnBookSuccess.jsp</result>
+		</action>
+		
+		<action name="RecordBook" class="stu.libraryManagementSystem.action.BookAction" method="RecordBook">
+			<result name="success">/success/RecordBookSuccess.jsp</result>
+		</action>
+	</package>
+</struts>
