@@ -52,13 +52,13 @@ public class BookOperation implements INFBookOperatrion {
 	public void RecordBook(book bookInformation) {
 		Session session = HibernateSessionFactory.getSession();
 		session.beginTransaction();
-		if(bookInformation.getNo().equals("") || bookInformation.getNo() == null){
+		if(bookInformation.getNo() == null || bookInformation.getNo().equals("")){
 			System.out.println("addnewBook");
 			String HQL = "select max(t.no) from book as t";
 			Query query = session.createQuery(HQL);
 			List list = query.list();
 			Iterator it = list.iterator();
-			Integer no = ((book)it.next()).getNo();
+			Integer no = (Integer)it.next();
 			bookInformation.setNo(no+1);
 		}
 		bookInformation.setNumber("1");

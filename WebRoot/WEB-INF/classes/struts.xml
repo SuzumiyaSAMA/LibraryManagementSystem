@@ -9,6 +9,7 @@
 			<result name="PasswordError">/error/PasswordError.jsp</result>
 			<result name="error">/error/error.jsp</result>
 			<result name="success">/MainPage.jsp</result>
+			<result name="input">/index.jsp</result>
 		</action>
 		
 		<action name="SearchBook" class="stu.libraryManagementSystem.action.BookAction" method="SearchBook">

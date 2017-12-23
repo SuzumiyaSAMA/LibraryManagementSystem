@@ -22,12 +22,23 @@
 <link rel="stylesheet" type="text/css" href="base.css" />
 </head>
 <body>
+<div style="background-color:Azure; color:Brown">
+<p>Hello, <%=session.getAttribute("user.name") %>. If not you, Please <a href="./index.jsp">login again</a>.</p>
+</div>
+	<h1 style="text-align:center">Please enter the name of the book.</h1>
 	<div id="section" style="margin:0 auto;text-align:center">
-		<s:form action="ReturnBook.action" method="post" theme="simple">
-			Book Name : <s:textfield name="book.name" size="20" /><br>
-			<s:submit value="submit" />
-			<s:reset value="reset" />
-		</s:form>
+		<table style="margin:0 auto;" cellpadding="10">
+			<s:form action="ReturnBook.action" method="post" theme="simple">
+				<tr>
+					<td>Book Name:</td>
+					<td><s:textfield name="book.name" size="20" /></td>
+				</tr>
+				<tr>
+					<td><s:submit value="Submit" /></td>
+					<td><s:reset value="Reset" /></td>
+				</tr>
+			</s:form>
+		</table>
 	</div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" import="com.opensymphony.xwork2.ActionContext"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -39,10 +39,12 @@
 	</tr>
 	</table><br>
 </div>
-<div id="section" style="margin:auto;width:200px;">
-	<form action="BorrowBook.action" method="post">
-		<input type="submit" value="borrow this book?" style="align:center">
-	</form>
+<div id="section" style="margin:auto;width:200px; text-align:center">
+	<% if(Integer.valueOf(String.valueOf(session.getAttribute("BookNumber"))) > 0) {%>
+	<input type="button" value="Borrow this book?" onclick="location.href='BorrowBook.action'" style="width:200px">
+	<%}%>
+	<br><br>
+	<input type="button" value="Back to main page" onclick="location.href='./MainPage.jsp'" style="width:200px">
 </div>
 </body>
 </html>

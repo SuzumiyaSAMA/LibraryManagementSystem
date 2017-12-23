@@ -23,15 +23,35 @@
 </head>
 
 <body>
-	<div id="section" style="margin:0 auto;text-align:center">
-		<s:form action="RecordBook.action" method="post" theme="simple">
-			Book Serials (optional) : <s:textfield name="book.No" size="20" /><br>
-			Name : <s:textfield name="book.name" size="20" /><br>
-			Writer : <s:textfield name="book.writer" size="20" /><br>
-			Publisher : <s:textfield name="book.publisher" size="20" /><br>
-			<s:submit value="submit" />
-			<s:reset value="reset" />
-		</s:form>
+<div style="background-color:Azure; color:Brown">
+<p>Hello, <%=session.getAttribute("user.name") %>. If not you, Please <a href="./index.jsp">login again</a>.</p>
+</div>
+	<h1 style="text-align:center">Please enter book information</h1>
+	<div id="section" style="margin:0 auto;text-align:center; font-size:60px">
+		<table style="margin:0 auto; cellpadding=40px; align:center;">
+			<s:form action="RecordBook.action" method="post" theme="simple">
+				<tr>
+					<td style="align:center">Book&nbsp;Serials&nbsp;(optional)&nbsp;:&nbsp;</td>
+					<td><s:textfield name="book.No" size="20" /></td>
+				</tr>
+				<tr>
+					<td>Name&nbsp;:&nbsp;</td>
+					<td><s:textfield name="book.name" size="20" /></td>
+				</tr>
+				<tr>
+					<td>Writer&nbsp;:&nbsp;</td>
+					<td><s:textfield name="book.writer" size="20" /></td>
+				</tr>
+				<tr>
+					<td>Publisher&nbsp;:&nbsp;</td>
+					<td><s:textfield name="book.publisher" size="20" /></td>
+				</tr>
+				<tr>
+					<td><s:submit value="Submit" /></td>
+					<td><s:reset value="Reset" /></td>
+				</tr>
+			</s:form>
+		</table>
 	</div>
 </body>
 </html>

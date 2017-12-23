@@ -8,28 +8,37 @@ import stu.libraryManagementSystem.dao.UserOperation.*;
 import stu.libraryManagementSystem.dao.model.LibraryUser.LibraryUser;
 
 public class UserAction extends ActionSupport {
-	LibraryUser user = null;
+	LibraryUser user = new LibraryUser();
 	INFUserOperation operation = new UserOperation();
 	
-	public String UserCheck(){
-		String name = user.getName();
-		String password = user.getPassword();
-		String result = ERROR;
-		switch(operation.UserCheck(name, password)){
+	@Override
+	public void validate(){
+		if(user.getName() == null || user.getName().trim().equals("")){
+			addFieldError("user.name", "Please enter your name!");
+			return;
+		}
+		if(user.getPassword() == null || user.getPassword().trim().equals("")){
+			addFieldError("user.password", "Please enter your password!");
+			return;
+		}
+		switch(operation.UserCheck(user.getName(), user.getPassword())){
 		case 0:{
-			result = "NoUserError";
+			addFieldError("user.name", "No such user! Please check your name.");
 			break; 
 		}
 		case 1:{
-			result = "PasswordError";
+			addFieldError("user.password", "Password error! Please Check your password.");
 			break;
 		}
 		case 2:{
-			result = SUCCESS;
 			ServletActionContext.getRequest().getSession().setAttribute("user.name", user.getName());
+			return;
 		}
 		}
-		return result;
+	}
+	
+	public String UserCheck(){
+		return SUCCESS;
 	}
 
 	public LibraryUser getUser() {

@@ -1,6 +1,11 @@
 # LibraryManagementSystem
 ## This is a Java EE work which requested by school.
 
+### 2017/12/23 Update
+*	Alter UserAction.UserCheck() into UserAction.validate();
+*	Add table layout into JSP page. Make it looks better.
+
+------------------------------------------------------------------------------------
 ### Update mark
 *   Add Hibernate function into this project.
 *   Fix many problems.

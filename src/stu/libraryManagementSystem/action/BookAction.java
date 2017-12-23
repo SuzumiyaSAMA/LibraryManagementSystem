@@ -26,7 +26,7 @@ public class BookAction extends ActionSupport {
 		this.book = operation.SearchBook(this.book.getName());
 		if(this.book == null)
 			return "NoBookError";
-		HttpSession session = ServletActionContext.getRequest().getSession();		
+		HttpSession session = ServletActionContext.getRequest().getSession();
 		session.setAttribute("BookNo", this.book.getNo());
 		session.setAttribute("BookName", this.book.getName());
 		session.setAttribute("BookWriter", this.book.getWriter());

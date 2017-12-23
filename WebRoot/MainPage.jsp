@@ -6,6 +6,9 @@
 <link rel="stylesheet" type="text/css" href="base.css" />
 </head>
 <body>
+<div style="background-color:Azure; color:Brown">
+<p>Hello, <%=session.getAttribute("user.name") %>. If not you, Please <a href="./index.jsp">login again</a>.</p>
+</div>
 <div id="head" style="margin:0 auto;text-align:center">
 <table style="margin:auto">
 		<caption>

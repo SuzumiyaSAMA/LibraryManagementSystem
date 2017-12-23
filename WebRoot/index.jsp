@@ -13,12 +13,32 @@
 		<h1>Welcome</h1>
 	</div>
 	<div id="section" style="margin:0 auto;text-align:center">
-		<s:form action="UserCheck.action" method="post" theme="simple">
-			UserName : <s:textfield name="user.name" size="20" /><br>
-			Password : <s:password name="user.password" size="20" /><br>
-			<s:submit value="submit" />
-			<s:reset value="reset" />
-		</s:form>
+		<table style="margin:0 auto" cellpadding="10">
+			<s:form action="UserCheck.action" method="post" theme="simple">
+				<tr>
+					<s:fielderror style="color:red">
+						<s:param>user.name</s:param>
+					</s:fielderror>
+				</tr>
+				<tr>
+					<td style="font-size:20px; font-weight:bold">UserName :</td>
+					<td><s:textfield name="user.name" size="20" /></td>
+				</tr>
+				<tr>
+					<s:fielderror style="color:red">
+						<s:param>user.password</s:param>
+					</s:fielderror>
+				</tr>
+				<tr>
+					<td style="font-size:20px; font-weight:bold">Password :</td>
+					<td><s:password name="user.password" size="20" /></td>
+				</tr>
+				<tr>
+					<td><s:submit value="Submit" /></td>
+					<td><s:reset value="Reset" /></td>
+				</tr>
+			</s:form>
+		</table>
 	</div>
 </body>
 

@@ -13,6 +13,7 @@ public class UserOperation implements INFUserOperation{
 	
 	public UserOperation(){}
 	
+	@Override
 	public int UserCheck(String name, String password){
 		String hql = "from LibraryUser u where u.name='"+name+"'";
 		Query query = HibernateSessionFactory.getSession().createQuery(hql);
