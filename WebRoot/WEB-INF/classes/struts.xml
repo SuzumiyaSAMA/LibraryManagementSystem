@@ -5,8 +5,6 @@
 <struts>
 	<package name="default" namespace="/" extends="struts-default">
 		<action name="UserCheck" class="stu.libraryManagementSystem.action.UserAction" method="UserCheck">
-			<result name="NoUserError">/error/NoUserError.jsp</result>
-			<result name="PasswordError">/error/PasswordError.jsp</result>
 			<result name="error">/error/error.jsp</result>
 			<result name="success">/MainPage.jsp</result>
 			<result name="input">/index.jsp</result>
